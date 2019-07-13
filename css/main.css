@@ -1,0 +1,455 @@
+/* device size */
+@media (max-width:370px) {
+  .about-me-img {
+    height : 45px !important;
+  }
+}
+
+@media (max-width:767px) {
+  #my-job {
+    font-size: 35px !important;
+  }
+
+  #my-name {
+    font-size: 50px !important;
+  }
+
+  #phone-img, #email-img {
+    width:30px !important;
+  }
+
+  #phone, #email {
+    font-size: 22px !important;
+  }
+
+  .title {
+    font-size: 55px !important;
+  }
+
+  .nav-link {
+    padding: .5rem .5rem;
+  }
+  
+  .navbar {
+    padding: .5rem 0;
+  }
+  .nav-link:hover {
+    padding: .5rem .5rem;
+  }
+}
+
+/* @media(min-width:766px) {
+  #mobile-ver {
+    display: none !important;
+  }
+} */
+@media (min-width:768px) and (max-width:991px) {
+  .contents {
+    padding-right: 30px !important;
+    padding-left: 30px !important;
+  }
+}
+
+@media (min-width:576px) and (max-width:767px) {
+  .my-site-btn {
+    margin-left: 2px !important;
+    margin-right: 2px !important;
+    padding-right: 3px !important;
+    padding-left: 3px !important;
+    font-size: 10pt;
+  }
+  .my-site-btn:hover {
+    margin-left: 2px !important;
+    margin-right: 2px !important;
+    padding-right: 3px !important;
+    padding-left: 3px !important;
+    font-size: 10pt;
+  }
+  .contents {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .title {
+    font-size: 50px !important;
+  }
+}
+@media (min-width:371px) and (max-width:767px) {
+  .about-me-img {
+    height : 70px !important;
+  }
+}
+
+@media (max-width:575px) { 
+  .contents {
+    padding: 20px 30px 30px 30px !important;
+  }
+}
+@media (min-width:758px) and (max-width:958px) {
+  .about-me-img {
+    height : 128px !important;
+  }
+}
+
+body, html {
+    position: relative;
+    height: 100%;
+    margin: 0;
+    scroll-behavior: smooth;
+  }
+
+
+.title {
+  text-align: center;
+  font-size: 70px;
+  font-weight: 800;
+  font-family: 'Poiret One', cursive;
+}
+
+nav a {
+  color:white;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #ffffff00;
+  border-bottom-style:solid;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0;
+}
+
+/* intro */
+#main { 
+  /* The image used */
+
+  background-image: linear-gradient(#21252900 60%, rgba(0,0,0,5)), url('../images/main.jpg');
+  /* background-color: red; */
+  /* Full height */
+  height: 100%; 
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#my-job {
+  font-size:40px;
+}
+
+#my-name {
+  font-size: 70px;
+}
+.black-cover {
+z-index: 1;
+height: 100%;
+width: 100%;
+display: table;
+}
+
+
+#intro-view {
+  display:table-cell;
+  vertical-align:middle;
+  text-align: center;
+}
+
+#intro-contents{
+  font-family: 'Poiret One', cursive;
+  color:white;
+  font-size: 50px;
+}
+
+/* about me */
+#about-view {
+  padding-top: 80px;
+  padding-bottom: 50px;
+  display:fixed;
+  background-color: black;
+  color: white;
+}
+.my-profile {
+  width: 200px;
+  height: 200px;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+#my-site {
+  /* margin:auto; */
+  float: right;
+  position: relative;
+  left: -50%;
+  margin-bottom: 40px;
+}
+.my-site-btn {
+  /* display: block; */
+  float: left;
+  position: relative;
+  left: 50%;
+  text-align: center;
+  padding:5px 10px;
+  margin-right:5px;
+  margin-left:5px;
+  color: white;
+  border: 2px solid white;
+}
+
+.my-site-btn:hover {
+  text-decoration: none;
+  text-align: center;
+  padding:5px 10px;
+  margin-right:5px;
+  margin-left:5px;
+  color: white;
+  background-color: #F28B66;
+  border: 2px solid white;
+}
+
+#introduce {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.contents {
+  flex-grow: 1;
+  padding: 20px 60px 30px 60px;
+}
+
+.about-me-img {
+  height : 200px;
+  width : auto;
+}
+
+#img-list {
+ text-align: center;
+}
+
+.img-view {
+  text-align: center;
+}
+
+
+/* Skills */
+.lang-title {
+  display: table-cell;
+  vertical-align:middle;
+  font-size: 20px;
+  font-family: 'Poiret One', cursive;
+  font-weight: 800;
+  background-image: linear-gradient(180deg,transparent 65%,#F28B66 0);
+}
+
+#skills-view {
+  padding-top: 70px;
+  padding-bottom: 20px;
+  color:black;
+}
+
+.skill-div {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.skill-part-name {
+  text-align: left;
+  font-size: 30px;
+  font-weight: 800;
+  font-family: 'Poiret One', cursive;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: solid;
+}
+
+.lang-intro {
+  margin-bottom: 20px;
+}
+
+
+.lang-ability {
+  margin-left:20px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* project */
+
+.card {
+  background-color: black;
+  border: 1px solid rgba(214, 123, 83, 0);
+  /* border: 1px solid white; */
+
+  font-family: 'Noto Sans KR', sans-serif;
+  color: white;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(214, 123, 83); */
+  /* box-shadow: 0 4px 8px 0 #714d44, 0 6px 20px 0 #b36b4c; */
+}
+
+.card-title {
+  margin-bottom: .75rem;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* .card-image-border {
+  border: 1px solid #d67b53e6;
+}
+
+.card-body-border {
+  border: 1px solid #d67b53e6;
+     border-left: 1px solid #d67b5300; 
+} */
+
+#project-view {
+  padding-top: 80px;
+  display:fixed;
+  background-color: black;
+  color: white;
+}
+.project-first, .project-second, .project-third {
+  margin-bottom: 50px;
+}
+.title-and-move-btn {
+  vertical-align: middle;
+  display: table-cell;
+}
+.project-title {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size : 20px;
+  display: table;
+  margin: 0 auto;
+}
+.card-title:after {
+  content: "";
+  display: block;
+  width: 30px;
+  margin: 10px auto;
+  border-bottom: 3px solid #F28B66;
+}
+
+.project-contents {
+  margin-bottom: 20px;
+}
+.skill-name {
+  /* display:block; */
+  float:left;
+  border: 2px solid #f7f0ee;
+  background-color: #f28b6614;
+  color:white;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 13px;
+  padding: 1px 5px;
+  margin-right:3px;
+  margin-bottom:3px;
+}
+.site-move {
+  clear: left;
+  padding-top:20px;
+  text-align: center;
+}
+.project-site-btn {
+  text-align: center;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+  color: white;
+  border: 2px solid white;
+  /* background-color: white;
+  color: black;
+  padding: 5px 10px; */
+}
+
+.project-site-btn:hover {
+  text-align: center;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+  color: white;
+  border: 2px solid white;
+  text-decoration: none;
+}
+
+.img-fixed {
+  position: relative;
+    margin: 0;
+  height: 280px;
+}
+
+.project-img1 {
+
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/project1.png');
+  height: 100%; 
+  /* Center and scale the image nicely */
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: table;
+  width: 100%;
+}
+
+.project-img2 {
+
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/project2.jpg');
+  height: 100%; 
+  /* Center and scale the image nicely */
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: table;
+  width: 100%;
+}
+
+.project-img3 {
+
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/project3.png');
+  height: 100%; 
+  /* Center and scale the image nicely */
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: table;
+  width: 100%;
+}
+
+.project-subtitle {
+  font-family: 'Do Hyeon', sans-serif;
+  font-size : 20px;
+  margin-bottom: 0;
+}
+
+/* contact */
+#contact-view { 
+  /* The image used */
+  padding-top : 60px;
+  padding-bottom : 60px;
+  background-image: linear-gradient(rgba(0,0,0,5),#21252900 60%, rgba(0,0,0,5)), url('../images/contact.jpg');
+  /* background-color: red; */
+  /* Full height */
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+#email {
+  text-align: center; 
+  color: rgb(202, 199, 199);
+  font-size: 30px;
+  font-family: 'Poiret One', cursive;
+}
+
+#phone {
+  text-align: center; 
+  color: white;
+  font-size: 30px;
+  font-family: 'Poiret One', cursive;
+  margin-right:20px;
+}
+
+#phone-img, #email-img {
+  width:50px;
+  height:auto;
+  padding-right: 10px;
+}
+
+/* #d3d3d359 */

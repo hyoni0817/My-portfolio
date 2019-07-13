@@ -1,0 +1,40 @@
+.snip1374 {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 255px;
+  max-width: 315px;
+  width: 100%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+.snip1374 .project-img {
+  max-width: 100%;
+  vertical-align: top;
+  -webkit-transition: all 2s ease-out;
+  transition: all 2s ease-out;
+  -webkit-transform: scale(1.4);
+  transform: scale(1.4);
+}
+.snip1374:hover .project-img,
+.snip1374.hover .project-img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+
+.project-black-cover {
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,5);
+  }
+
+  .project-img {
+    background-image: linear-gradient(-45deg, #34495e 0%,#cc6055 100%),url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample66.jpg);
+    height: 240px;
+    width: auto;
+      background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  
