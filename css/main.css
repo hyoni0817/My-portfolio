@@ -2,17 +2,19 @@
 /* ie 지원을 위해 구글 웹 폰드 대신 사용 */
 @font-face {
   font-family: 'Poiret One';
-  src: url(../font/PoiretOne-Regular.ttf);
+  src: url(../fonts/PoiretOne-Regular.ttf) format('truetype'),
+  url(../fonts/PoiretOne-Regular.woff) format('woff');
 }
 
 @font-face {
   font-family:'Do Hyeon';
-  src: url(../font/DoHyeon-Regular.ttf);
+  src: url(../fonts/DoHyeon-Regular.ttf) format('truetype'),
+  url(../fonts/DoHyeon-Regular.woff) format('woff');
 }
 
 @font-face {
   font-family: 'Noto Sans KR';
-  src: url(../font/NotoSansKR-Regular.otf);
+  src:  url(../fonts/NanumGothic-Regular.woff) format('woff');
 }
 
 
