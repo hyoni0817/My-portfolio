@@ -1,22 +1,40 @@
 /* font */
 /* ie 지원을 위해 구글 웹 폰드 대신 사용 */
+
+@font-face {
+  font-family: 'NanumGothic';
+  src: url('../fonts/NanumGothic.eot');
+  src: local('NanumGothic'),
+      url('../fonts/NanumGothic.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/NanumGothic.woff2') format('woff2'),
+      url('../fonts/NanumGothic-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Do Hyeon';
+  src: url('../fonts/DoHyeon-Regular.eot');
+  src: local('Do Hyeon Regular'), local('DoHyeon-Regular'),
+      url('../fonts/DoHyeon-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/DoHyeon-Regular.woff2') format('woff2'),
+      url('../fonts/DoHyeon-Regular.woff') format('woff'),
+      url('../fonts/DoHyeon-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @font-face {
   font-family: 'Poiret One';
-  src: url(../fonts/PoiretOne-Regular.ttf) format('truetype'),
-  url(../fonts/PoiretOne-Regular.woff) format('woff');
+  src: url('../fonts/PoiretOne-Regular.eot');
+  src: local('Poiret One'), local('PoiretOne-Regular'),
+      url('../fonts/PoiretOne-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/PoiretOne-Regular.woff2') format('woff2'),
+      url('../fonts/PoiretOne-Regular.woff') format('woff'),
+      url('../fonts/PoiretOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
-
-@font-face {
-  font-family:'Do Hyeon';
-  src: url(../fonts/DoHyeon-Regular.ttf) format('truetype'),
-  url(../fonts/DoHyeon-Regular.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Noto Sans KR';
-  src:  url(../fonts/NanumGothic-Regular.woff) format('woff');
-}
-
 
 /* device size */
 @media (max-width:370px) {
@@ -101,7 +119,7 @@
 
 @media (max-width:575px) { 
   .contents {
-    padding: 20px 30px 30px 30px !important;
+    padding: 20px 15px 30px 15px !important;
   }
 }
 @media (min-width:758px) and (max-width:958px) {
@@ -235,7 +253,7 @@ display: table;
 }
 
 #introduce {
-  font-family: 'Noto Sans KR';
+  font-family: 'NanumGothic';
 }
 .contents {
   flex-grow: 1;
@@ -300,7 +318,7 @@ display: table;
 
 .lang-ability {
   margin-left:20px;
-  font-family: 'Noto Sans KR';
+  font-family: 'NanumGothic';
 }
 
 /* project */
@@ -310,7 +328,7 @@ display: table;
   border: 1px solid rgba(214, 123, 83, 0);
   /* border: 1px solid white; */
 
-  font-family: 'Noto Sans KR';
+  font-family: 'NanumGothic';
   color: white;
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(214, 123, 83); */
   /* box-shadow: 0 4px 8px 0 #714d44, 0 6px 20px 0 #b36b4c; */
@@ -346,7 +364,7 @@ display: table;
   display: table-cell;
 }
 .project-title {
-  font-family: 'Noto Sans KR';
+  font-family: 'NanumGothic';
   font-size : 20px;
   display: table;
   margin: 0 auto;
