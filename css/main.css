@@ -1,3 +1,21 @@
+/* font */
+/* ie 지원을 위해 구글 웹 폰드 대신 사용 */
+@font-face {
+  font-family: 'Poiret One';
+  src: url(../font/PoiretOne-Regular.ttf);
+}
+
+@font-face {
+  font-family:'Do Hyeon';
+  src: url(../font/DoHyeon-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url(../font/NotoSansKR-Regular.otf);
+}
+
+
 /* device size */
 @media (max-width:370px) {
   .about-me-img {
@@ -102,7 +120,7 @@ body, html {
   text-align: center;
   font-size: 70px;
   font-weight: 800;
-  font-family: 'Poiret One', cursive;
+  font-family: 'Poiret One';
 }
 
 nav a {
@@ -164,7 +182,7 @@ display: table;
 }
 
 #intro-contents{
-  font-family: 'Poiret One', cursive;
+  font-family: 'Poiret One';
   color:white;
   font-size: 50px;
 }
@@ -215,13 +233,17 @@ display: table;
 }
 
 #introduce {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR';
 }
 .contents {
   flex-grow: 1;
   padding: 20px 60px 30px 60px;
 }
 
+#about-subtitle {
+  font-weight: bold;
+  font-size: 20px;
+}
 .about-me-img {
   height : 200px;
   width : auto;
@@ -241,7 +263,7 @@ display: table;
   display: table-cell;
   vertical-align:middle;
   font-size: 20px;
-  font-family: 'Poiret One', cursive;
+  font-family: 'Poiret One';
   font-weight: 800;
   background-image: linear-gradient(180deg,transparent 65%,#F28B66 0);
 }
@@ -261,7 +283,7 @@ display: table;
   text-align: left;
   font-size: 30px;
   font-weight: 800;
-  font-family: 'Poiret One', cursive;
+  font-family: 'Poiret One';
   padding-right: 50px;
   padding-left: 50px;
   padding-top: 20px;
@@ -276,7 +298,7 @@ display: table;
 
 .lang-ability {
   margin-left:20px;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR';
 }
 
 /* project */
@@ -286,7 +308,7 @@ display: table;
   border: 1px solid rgba(214, 123, 83, 0);
   /* border: 1px solid white; */
 
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR';
   color: white;
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(214, 123, 83); */
   /* box-shadow: 0 4px 8px 0 #714d44, 0 6px 20px 0 #b36b4c; */
@@ -322,7 +344,7 @@ display: table;
   display: table-cell;
 }
 .project-title {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR';
   font-size : 20px;
   display: table;
   margin: 0 auto;
@@ -418,7 +440,7 @@ display: table;
 }
 
 .project-subtitle {
-  font-family: 'Do Hyeon', sans-serif;
+  font-family: 'Do Hyeon';
   font-size : 20px;
   margin-bottom: 0;
 }
@@ -441,14 +463,14 @@ display: table;
   text-align: center; 
   color: rgb(202, 199, 199);
   font-size: 30px;
-  font-family: 'Poiret One', cursive;
+  font-family: 'Poiret One';
 }
 
 #phone {
   text-align: center; 
   color: white;
   font-size: 30px;
-  font-family: 'Poiret One', cursive;
+  font-family: 'Poiret One';
   margin-right:20px;
 }
 
