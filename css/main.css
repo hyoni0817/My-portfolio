@@ -10,6 +10,7 @@
       url('../fonts/NanumGothic-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  unicode-range: U+f9ca-fa0b, U+ff03-ff05, U+ff07, U+ff0a-ff0b, U+ff0d-ff19, U+ff1b, U+ff1d, U+ff20-ff5b, U+ff5d, U+ffe0-ffe3, U+ffe5-ffe6;
 }
 
 @font-face {
@@ -22,6 +23,7 @@
       url('../fonts/DoHyeon-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  unicode-range: U+f9ca-fa0b, U+ff03-ff05, U+ff07, U+ff0a-ff0b, U+ff0d-ff19, U+ff1b, U+ff1d, U+ff20-ff5b, U+ff5d, U+ffe0-ffe3, U+ffe5-ffe6;
 }
 
 @font-face {
@@ -32,8 +34,7 @@
       url('../fonts/PoiretOne-Regular.woff2') format('woff2'),
       url('../fonts/PoiretOne-Regular.woff') format('woff'),
       url('../fonts/PoiretOne-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  unicode-range: U+f9ca-fa0b, U+ff03-ff05, U+ff07, U+ff0a-ff0b, U+ff0d-ff19, U+ff1b, U+ff1d, U+ff20-ff5b, U+ff5d, U+ffe0-ffe3, U+ffe5-ffe6;
 }
 
 /* device size */
