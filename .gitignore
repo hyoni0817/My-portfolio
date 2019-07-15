@@ -1,0 +1,6 @@
+#express로 서버 실행해서 테스트
+node_modules
+public
+index_copy.html
+app.js
+package-lock.json
