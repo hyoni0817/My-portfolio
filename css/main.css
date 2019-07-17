@@ -189,6 +189,9 @@ height: 100%;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
+overflow-x: hidden;
+overflow-y: hidden;
+text-align: center;
 }
 
 #my-job {
@@ -202,14 +205,12 @@ font-size: 70px;
 z-index: 1;
 height: 100%;
 width: 100%;
-display: table;
+
 }
 
 
 #intro-view {
-display:table-cell;
-vertical-align:middle;
-text-align: center;
+display:table;
 }
 
 #intro-contents{
