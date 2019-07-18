@@ -16,6 +16,8 @@
         <!-- text-animation -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
         <link rel="stylesheet" href="./css/style.css">
+        <!-- css animation -->
+        <link rel="stylesheet" href="css/animate.css">
         <!-- view -->
         <link rel="stylesheet" href="./css/main.css">
         <!-- <link rel="stylesheet" href="./css/skills-style.css"> -->
@@ -68,7 +70,7 @@
                                 <a class="my-site-btn " href="https://stackoverflow.com/users/8006592/sophia">Stack overflow</a>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12" id="introduce">
+                        <div class="col-md-6 col-sm-6 col-xs-12 wow fadeIn" id="introduce">
                             <div class="contents">
                                 <p id="about-subtitle">사람들에게 도움이 되는 개발자</p>
                                 <p>
@@ -91,7 +93,7 @@
             <div class="contents">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-md-6 col-sm-6 col-xs-12 wow slideInLeft">
                             <div class="skill-div">
                                 <span class="skill-part-name">Front-End</span>
                             </div>
@@ -124,7 +126,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-md-6 col-sm-6 col-xs-12 wow slideInRight">
                             <div class="skill-div">
                                 <span class="skill-part-name">Back-End</span>
                             </div>
@@ -160,7 +162,7 @@
         </div>
         <div id="project-view">  
             <p class="title">Project</p>          
-            <div class="contents">
+            <div class="contents wow fadeInUp">
                 <div class="container">
                     <div class="card mb-3" >
                         <div class="row no-gutters">
@@ -307,6 +309,10 @@
         <!-- 별똥별 -->
         <script src="js/meteor.js"></script>
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script> -->
-
+        <!-- css animation -->
+        <script src="js/wow.min.js"></script>
+        <script>
+            new WOW().init();
+        </script>
     </body>
 </html>
