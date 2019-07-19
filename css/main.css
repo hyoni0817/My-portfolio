@@ -144,6 +144,7 @@ body, html {
   height: 100%;
   margin: 0;
   scroll-behavior: smooth; /* ie와 safari에서는 지원안함*/
+  overflow-x: hidden;
 }
 
 
