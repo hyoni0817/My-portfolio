@@ -144,6 +144,12 @@
 }
 }
 
+@media (max-width:575px) {
+#my-site {
+  margin-bottom: 10px !important;
+}
+}
+
 body, html {
   position: relative;
   height: 100%;
@@ -243,23 +249,18 @@ margin-right: 50px;
 margin-left: 50px;
 }
 #my-site {
-/* margin:auto; */
-float: right;
-position: relative;
-left: -50%;
 margin-bottom: 40px;
 }
 .my-site-btn {
 /* display: block; */
-float: left;
-position: relative;
-left: 50%;
 text-align: center;
 padding:5px 10px;
+margin-top: 20px;
 margin-right:5px;
 margin-left:5px;
 color: white;
 border: 2px solid white;
+background-color: rgba(0, 0, 0, 0);
 }
 
 .my-site-btn:hover {
@@ -271,6 +272,15 @@ margin-left:5px;
 color: white;
 background-color: #F28B66;
 border: 2px solid white;
+}
+
+.my-site-btn-link {
+color: white;
+}
+
+.my-site-btn-link:hover {
+color: white;
+text-decoration: none;
 }
 
 #introduce {
