@@ -330,8 +330,9 @@ margin-bottom: 20px;
 
 
 .lang-ability {
-margin-left:20px;
+padding-left:20px;
 font-family: 'NanumBarunGothic', sans-serif;
+list-style: none;
 }
 
 /* project */
