@@ -402,6 +402,12 @@ border-bottom: 3px solid #F28B66;
 .project-contents {
 margin-bottom: 20px;
 }
+
+.project-performance-tasks {
+  clear: both;
+  padding-top: 10px;
+}
+
 .skill-name {
 /* display:block; */
 float:left;
