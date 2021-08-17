@@ -423,16 +423,17 @@ margin-bottom:3px;
 }
 .site-move {
 clear: left;
-padding-top:20px;
+padding-top:10px;
 text-align: center;
 }
 .project-site-btn {
 text-align: center;
 padding: 5px 10px;
+margin-top: 10px;
 margin-right: 5px;
 margin-left: 5px;
-color: white;
 border: 2px solid white;
+background-color: rgba(255, 255, 255, 0);
 /* background-color: white;
 color: black;
 padding: 5px 10px; */
@@ -446,6 +447,15 @@ margin-left: 5px;
 color: white;
 border: 2px solid white;
 background-color: #F28B66;
+text-decoration: none;
+}
+
+.project-site-btn-link {
+color: white;
+}
+
+.project-site-btn-link:hover {
+color: white;
 text-decoration: none;
 }
 
