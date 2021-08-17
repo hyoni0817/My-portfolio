@@ -148,6 +148,9 @@ body, html {
   overflow-x: hidden;
 }
 
+ul, #introduce p {
+  word-break: keep-all;
+}
 
 .title {
 text-align: center;
@@ -333,6 +336,7 @@ margin-bottom: 20px;
 padding-left:20px;
 font-family: 'NanumBarunGothic', sans-serif;
 list-style: none;
+word-break: keep-all;
 }
 
 /* project */
@@ -353,6 +357,7 @@ margin-bottom: .75rem;
 display: table-cell;
 vertical-align: middle;
 text-align: center;
+word-break: keep-all;
 }
 
 /* .card-image-border {
@@ -401,6 +406,7 @@ border-bottom: 3px solid #F28B66;
 
 .project-contents {
 margin-bottom: 10px;
+word-break: keep-all;
 }
 
 .project-performance-tasks {
