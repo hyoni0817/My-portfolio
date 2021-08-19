@@ -347,9 +347,8 @@ margin-bottom: 20px;
 
 
 .lang-ability {
-padding-left:20px;
 font-family: 'NanumBarunGothic', sans-serif;
-list-style: none;
+list-style: circle;
 word-break: keep-all;
 }
 
