@@ -5,3 +5,11 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'SeoulNamsanEB';
+    src: url('../fonts/SeoulNamsanEB.woff2') format('woff2'),
+         url('../fonts/SeoulNamsanEB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
