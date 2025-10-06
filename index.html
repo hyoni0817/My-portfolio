@@ -1,17 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nahyun Portfolio</title>
 
-    <!-- fonts -->
-    <link rel="stylesheet" rel="preload" href="css/fonts.css">
-</head>
+    <!-- css -->
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/main.css" />
 
-<body>
+    <!-- fonts -->
+    <link rel="stylesheet" rel="preload" href="css/fonts.css" />
+  </head>
+
+  <body>
+    <!-- 홈 (Home) -->
+    <section class="home">
+      <!-- 지하철 노선 표지판 -->
+      <nav class="subway-nav">
+        <div class="subway-nav__track subway-nav__track--half--start"></div>
+        <ul class="subway-nav__stations">
+          <li class="station station--active">
+            <span class="station__number">01</span>
+            <div class="station__name">
+              <span class="station__name__ko">홈</span>
+              <span class="station__name__en">Home</span>
+            </div>
+          </li>
+          <li class="station station--right">
+            <img src="images/common/icons/arrow.svg" alt="오른쪽 방향 화살표" />
+            <span class="station__number">02</span>
+            <span class="station__name__ko">프로필</span>
+            <span class="station__name__en">Profile</span>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 화면 전광판 -->
+      <!-- HTML: 첫 번째 텍스트는 미리 작성하여 Layout Shift 방지 -->
+      <div class="display-board">
+        <div class="display-board__wrapper">
+          <div class="display-board__text">
+            이번열차 <span class="display-board__destination">이나현</span> 행
+            열차가 <span class="display-board__time">잠시후</span> 출발합니다
+          </div>
+        </div>
+      </div>
+
+      <div class="subway">
+        <!-- 지하철 플랫폼 -->
+        <div class="subway__platform">
+          <div class="subway__train">
+            <img
+              class="subway__train__image"
+              src="images/subway/train.png"
+              alt="지하철 열차"
+            />
+            <div class="subway__train__door subway__train__door--1">
+              <img
+                class="subway__train__door__image--left"
+                src="images/subway/train-door-left.png"
+                alt="지하철 문 왼쪽"
+              />
+              <img
+                class="subway__train__door__image--right"
+                src="images/subway/train-door-right.png"
+                alt="지하철 문 오른쪽"
+              />
+            </div>
+            <div class="subway__train__door subway__train__door--2">
+              <img
+                class="subway__train__door__image--left"
+                src="images/subway/train-door-left.png"
+                alt="지하철 문 왼쪽"
+              />
+              <img
+                class="subway__train__door__image--right"
+                src="images/subway/train-door-right.png"
+                alt="지하철 문 오른쪽"
+              />
+            </div>
+            <div class="subway__train__door subway__train__door--3">
+              <img
+                class="subway__train__door__image--left"
+                src="images/subway/train-door-left.png"
+                alt="지하철 문 왼쪽"
+              />
+              <img
+                class="subway__train__door__image--right"
+                src="images/subway/train-door-right.png"
+                alt="지하철 문 오른쪽"
+              />
+            </div>
+            <div class="subway__train__door subway__train__door--4">
+              <img
+                class="subway__train__door__image--left"
+                src="images/subway/train-door-left.png"
+                alt="지하철 문 왼쪽"
+              />
+              <img
+                class="subway__train__door__image--right"
+                src="images/subway/train-door-right.png"
+                alt="지하철 문 오른쪽"
+              />
+            </div>
+          </div>
+          <img
+            class="subway__platform__floor__image"
+            src="images/subway/floor.png"
+            alt="지하철 바닥"
+          />
+        </div>
+
+        <!-- 개찰구 -->
+        <div class="subway__fence">
+          <img
+            class="subway__fence__image"
+            src="images/subway/fence.png"
+            alt="지하철 가이드 펜스"
+          />
+          <div class="subway__ticket__gate">
+            <button
+              onclick="handleClickTicketGate()"
+              class="subway__ticket__gate__button"
+            >
+              <img
+                src="images/subway/ticket-gate.png"
+                alt="지하철 티켓 게이트"
+              />
+            </button>
+            <div class="subway__ticket__gate__door">
+              <img
+                class="subway__ticket__gate__door__image--left"
+                src="images/subway/ticket-gate-door-left.png"
+                alt="지하철 티켓 게이트"
+              />
+              <img
+                class="subway__ticket__gate__door__image--right"
+                src="images/subway/ticket-gate-door-right.png"
+                alt="지하철 티켓 게이트"
+              />
+            </div>
+          </div>
+          <img
+            class="subway__fence__image"
+            src="images/subway/fence.png"
+            alt="지하철 가이드 펜스"
+          />
+        </div>
+      </div>
+    </section>
+
     <!-- gsap -->
     <script src="js/gsap.min.js"></script>
-</body>
+    <script src="js/infiniteLoopAnimation.js"></script>
 
+    <script>
+      // 매개변수로 textElement.innerHTML 값을 전달할 수 있게 하기.
+      function initDisplayBoard() {
+        // 1. 의존성 확인
+        if (
+          typeof gsap === 'undefined' ||
+          typeof horizontalLoop === 'undefined'
+        ) {
+          console.warn('GSAP 또는 horizontalLoop 함수를 찾을 수 없습니다.');
+          return;
+        }
+
+        const displayBoardWrapper = document.querySelector(
+          '.display-board__wrapper'
+        );
+        if (!displayBoardWrapper) return;
+
+        // 2. DocumentFragment로 한 번에 DOM 추가 (성능 최적화)
+        const fragment = document.createDocumentFragment();
+        const repeatCount = 9; // 첫 번째는 이미 HTML에 있음
+
+        for (let i = 0; i < repeatCount; i++) {
+          const textElement = document.createElement('div');
+          textElement.className = 'display-board__text';
+          textElement.innerHTML =
+            "이번열차 <span class='display-board__destination'>이나현</span> 행 열차가 <span class='display-board__time'>잠시후</span> 출발합니다";
+          fragment.appendChild(textElement);
+        }
+
+        // 3. 한 번에 DOM에 추가 (1번의 reflow만 발생)
+        displayBoardWrapper.appendChild(fragment);
+
+        // 4. 애니메이션 초기화
+        const displayBoardTexts = gsap.utils.toArray('.display-board__text');
+        const loop = horizontalLoop(displayBoardTexts, {
+          paused: false,
+          draggable: false,
+          center: true,
+          repeat: -1,
+        });
+      }
+
+      // 5. 안전한 초기화
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initDisplayBoard);
+      } else {
+        initDisplayBoard();
+      }
+    </script>
+    <script src="js/subway.js"></script>
+  </body>
 </html>
