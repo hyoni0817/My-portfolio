@@ -1,7 +1,36 @@
+/* 슬라이드 레이아웃 */
+.slide {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.home {
+  transform: translateX(0); /* GSAP 애니메이션을 위한 초기값 */
+}
+
+.profile {
+  left: 100vw; /* 초기에는 화면 오른쪽에 숨겨둠 */
+  transform: translateX(0); /* GSAP 애니메이션을 위한 초기값 */
+}
+
+.project {
+  left: 100vw; /* 초기에는 화면 더 오른쪽에 숨겨둠 */
+  transform: translateX(0); /* GSAP 애니메이션을 위한 초기값 */
+}
+
 /* 전광판 */
 .display-board {
   font-family: 'Subset-DungGeunMo';
   font-size: 2rem;
+  line-height: 2;
   font-weight: normal;
   font-style: normal;
   color: var(--color-green-light);
@@ -67,6 +96,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.subway-nav__track__arrow--left {
+  transform: rotate(180deg);
 }
 
 .subway-nav__track {

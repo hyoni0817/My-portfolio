@@ -15,7 +15,7 @@
 
   <body>
     <!-- 홈 (Home) -->
-    <section class="home">
+    <section class="home slide">
       <!-- 지하철 노선 표지판 -->
       <nav class="subway-nav">
         <div class="subway-nav__track subway-nav__track--half--start"></div>
@@ -151,9 +151,43 @@
       </div>
     </section>
 
+    <!-- 프로필 -->
+    <section class="profile slide">
+      <!-- 지하철 노선 표지판 -->
+      <nav class="subway-nav">
+        <div class="subway-nav__track"></div>
+        <ul class="subway-nav__stations">
+          <li class="station station--left">
+            <span class="station__number">01</span>
+            <span class="station__name__ko">홈</span>
+            <span class="station__name__en">Home</span>
+            <img
+              class="subway-nav__track__arrow--left"
+              src="images/common/icons/arrow.svg"
+              alt="왼쪽 방향 화살표"
+            />
+          </li>
+          <li class="station station--active">
+            <span class="station__number">02</span>
+            <div class="station__name">
+              <span class="station__name__ko">프로필</span>
+              <span class="station__name__en">Profile</span>
+            </div>
+          </li>
+          <li class="station station--right">
+            <img src="images/common/icons/arrow.svg" alt="오른쪽 방향 화살표" />
+            <span class="station__number">03</span>
+            <span class="station__name__ko">프로젝트</span>
+            <span class="station__name__en">Project</span>
+          </li>
+        </ul>
+      </nav>
+    </section>
+
     <!-- gsap -->
     <script src="js/gsap.min.js"></script>
     <script src="js/infiniteLoopAnimation.js"></script>
+    <script src="js/slide.js"></script>
 
     <script>
       // 매개변수로 textElement.innerHTML 값을 전달할 수 있게 하기.
@@ -199,9 +233,13 @@
 
       // 5. 안전한 초기화
       if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initDisplayBoard);
+        document.addEventListener('DOMContentLoaded', () => {
+          initDisplayBoard();
+          initSlide();
+        });
       } else {
         initDisplayBoard();
+        initSlide();
       }
     </script>
     <script src="js/subway.js"></script>
