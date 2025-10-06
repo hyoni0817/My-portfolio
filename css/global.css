@@ -1,0 +1,27 @@
+:root {
+    --color-background: #201734;
+    --color-yellow: #E1E389;
+    --color-orange: #F2712B;
+    --color-green-light: #46C981;
+    --color-green-dark: #188F58;
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'SeoulNamsanEB';
+    font-size: 10px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--color-background);
+    overflow: hidden; /* 스크롤바 제거 및 화면 밖 요소 숨김 */
+}
