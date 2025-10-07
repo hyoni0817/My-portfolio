@@ -1,15 +1,31 @@
 @font-face {
-    font-family: 'Subset-DungGeunMo';
-    src: url('../fonts/Subset-DungGeunMo.woff2') format('woff2'),
-         url('../fonts/Subset-DungGeunMo.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Subset-DungGeunMo';
+  src: url('../fonts/Subset-DungGeunMo.woff2') format('woff2'),
+    url('../fonts/Subset-DungGeunMo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'SeoulNamsanEB';
-    src: url('../fonts/SeoulNamsanEB.woff2') format('woff2'),
-         url('../fonts/SeoulNamsanEB.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'SeoulNamsanEB';
+  src: url('../fonts/SeoulNamsanEB.woff2') format('woff2'),
+    url('../fonts/SeoulNamsanEB.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SeoulNamsanL';
+  src: url('../fonts/SeoulNamsanL.woff2') format('woff2'),
+    url('../fonts/SeoulNamsanL.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url('../fonts/NotoSansKR-Regular.woff2') format('woff2'),
+    url('../fonts/NotoSansKR-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
