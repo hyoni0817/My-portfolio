@@ -53,10 +53,151 @@ function resetProfileElements() {
   }
 }
 
-function initSlide() {
-  // 현재 활성 슬라이드 추적
-  let currentSlide = 0; // 0: home, 1: profile, 2: project
+/**
+ * 홈 → 프로필 이동
+ */
+function moveToProfile() {
+  // 홈 → 프로필
+  gsap.to('.home', {
+    x: '-100vw',
+    duration: 1,
+    ease: 'power2.inOut',
+  });
+  gsap
+    .to('.profile', {
+      x: '-100vw',
+      duration: 1,
+      ease: 'power2.inOut',
+    })
+    .then(() => {
+      const element = document.querySelector('.profile__image__group');
+      if (element) {
+        element.style.visibility = 'visible';
+      }
 
+      // SVG 애니메이션들을 순차적으로 실행
+      const tl = gsap.timeline();
+
+      // 1. 파티 아이콘 회전 + 스케일 애니메이션
+      tl.fromTo(
+        '.profile__party__image',
+        {
+          scale: 0,
+          rotation: -180,
+          opacity: 0,
+        },
+        {
+          scale: 1,
+          rotation: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'back.out(1.7)',
+        }
+      )
+        // 2. 반짝이 효과들 순차 등장
+        .fromTo(
+          '.profile__sparkle__image',
+          {
+            scale: 0,
+            y: -20,
+            opacity: 0,
+          },
+          {
+            scale: 1,
+            y: 0,
+            opacity: 1,
+            duration: 0.5,
+            ease: 'bounce.out',
+          },
+          '-=0.3'
+        )
+        .fromTo(
+          '.profile__fill-sparkle__image',
+          {
+            scale: 0,
+            opacity: 0,
+          },
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 0.5,
+            ease: 'bounce.out',
+          },
+          '-=0.2'
+        )
+        // 3. 스프링 그리기 애니메이션 실행
+        .call(
+          () => {
+            // 스프링 SVG를 먼저 표시
+            gsap.set('.profile__spiral__image--right', {
+              display: 'block',
+              opacity: 1,
+            });
+
+            // 선 그리기 애니메이션 실행
+            animateSpiralDraw('.profile__spiral__image--right path');
+          },
+          null,
+          '-=0.6'
+        )
+        .call(
+          () => {
+            // 스프링 SVG를 먼저 표시
+            gsap.set('.profile__spiral__image--left', {
+              display: 'block',
+              opacity: 1,
+            });
+
+            // 선 그리기 애니메이션 실행
+            animateSpiralDraw('.profile__spiral__image--left path');
+          },
+          null,
+          '-=0.6'
+        )
+        // 4. 프로필 이미지 마지막에 등장
+        .fromTo(
+          '.profile__me__image',
+          {
+            scale: 0.5,
+            y: 30,
+            opacity: 0,
+          },
+          {
+            scale: 1,
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            ease: 'power2.out',
+          },
+          '-=0.3'
+        );
+
+      // 한 번만 실행되는 애니메이션 효과들
+      // 파티 아이콘 회전 (한 바퀴만)
+      gsap.to('.profile__party__image', {
+        rotation: 360,
+        duration: 2,
+        ease: 'power2.out',
+      });
+
+      // 스프링 이미지들 살짝 회전 (한 번만)
+      gsap.to('.profile__spiral__image--left', {
+        rotation: -120,
+        duration: 1.2,
+        ease: 'elastic.out(1, 0.3)',
+      });
+
+      gsap.to('.profile__spiral__image--right', {
+        rotation: 10,
+        duration: 1.2,
+        ease: 'elastic.out(1, 0.3)',
+      });
+    });
+
+  currentSlide = 1;
+}
+
+function initSlide() {
   // 모든 왼쪽 버튼(이전 슬라이드로 이동)에 이벤트 추가
   const leftButtons = document.querySelectorAll('.station--left');
   leftButtons.forEach(button => {
@@ -91,144 +232,7 @@ function initSlide() {
       console.log('오른쪽 버튼 클릭됨! 현재 슬라이드:', currentSlide);
 
       if (currentSlide === 0) {
-        // 홈 → 프로필
-        gsap.to('.home', {
-          x: '-100vw',
-          duration: 1,
-          ease: 'power2.inOut',
-        });
-        gsap
-          .to('.profile', {
-            x: '-100vw',
-            duration: 1,
-            ease: 'power2.inOut',
-          })
-          .then(() => {
-            const element = document.querySelector('.profile__image__group');
-            if (element) {
-              element.style.visibility = 'visible';
-            }
-
-            // SVG 애니메이션들을 순차적으로 실행
-            const tl = gsap.timeline();
-
-            // 1. 파티 아이콘 회전 + 스케일 애니메이션
-            tl.fromTo(
-              '.profile__party__image',
-              {
-                scale: 0,
-                rotation: -180,
-                opacity: 0,
-              },
-              {
-                scale: 1,
-                rotation: 0,
-                opacity: 1,
-                duration: 0.8,
-                ease: 'back.out(1.7)',
-              }
-            )
-              // 2. 반짝이 효과들 순차 등장
-              .fromTo(
-                '.profile__sparkle__image',
-                {
-                  scale: 0,
-                  y: -20,
-                  opacity: 0,
-                },
-                {
-                  scale: 1,
-                  y: 0,
-                  opacity: 1,
-                  duration: 0.5,
-                  ease: 'bounce.out',
-                },
-                '-=0.3'
-              )
-              .fromTo(
-                '.profile__fill-sparkle__image',
-                {
-                  scale: 0,
-                  opacity: 0,
-                },
-                {
-                  scale: 1,
-                  opacity: 1,
-                  duration: 0.5,
-                  ease: 'bounce.out',
-                },
-                '-=0.2'
-              )
-              // 3. 스프링 그리기 애니메이션 실행
-              .call(
-                () => {
-                  // 스프링 SVG를 먼저 표시
-                  gsap.set('.profile__spiral__image--right', {
-                    display: 'block',
-                    opacity: 1,
-                  });
-
-                  // 선 그리기 애니메이션 실행
-                  animateSpiralDraw('.profile__spiral__image--right path');
-                },
-                null,
-                '-=0.6'
-              )
-              .call(
-                () => {
-                  // 스프링 SVG를 먼저 표시
-                  gsap.set('.profile__spiral__image--left', {
-                    display: 'block',
-                    opacity: 1,
-                  });
-
-                  // 선 그리기 애니메이션 실행
-                  animateSpiralDraw('.profile__spiral__image--left path');
-                },
-                null,
-                '-=0.6'
-              )
-              // 4. 프로필 이미지 마지막에 등장
-              .fromTo(
-                '.profile__me__image',
-                {
-                  scale: 0.5,
-                  y: 30,
-                  opacity: 0,
-                },
-                {
-                  scale: 1,
-                  y: 0,
-                  opacity: 1,
-                  duration: 0.7,
-                  ease: 'power2.out',
-                },
-                '-=0.3'
-              );
-
-            // 한 번만 실행되는 애니메이션 효과들
-            // 파티 아이콘 회전 (한 바퀴만)
-            gsap.to('.profile__party__image', {
-              rotation: 360,
-              duration: 2,
-              ease: 'power2.out',
-            });
-
-            // 스프링 이미지들 살짝 회전 (한 번만)
-            gsap.to('.profile__spiral__image--left', {
-              rotation: -120,
-              duration: 1.2,
-              ease: 'elastic.out(1, 0.3)',
-            });
-
-            gsap.to('.profile__spiral__image--right', {
-              rotation: 10,
-              duration: 1.2,
-              ease: 'elastic.out(1, 0.3)',
-            });
-          });
-
-        currentSlide = 1;
+        moveToProfile();
       } else if (currentSlide === 1) {
         // 프로필 → 프로젝트
         gsap.to('.profile', {
