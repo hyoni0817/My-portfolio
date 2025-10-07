@@ -73,7 +73,7 @@ function initSlide() {
           ease: 'power2.inOut',
         });
         gsap.to('.profile', {
-          x: '100vw', // 프로필을 오른쪽으로 이동
+          x: '0',
           duration: 1,
           ease: 'power2.inOut',
         });
