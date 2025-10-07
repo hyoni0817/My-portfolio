@@ -192,61 +192,75 @@ function moveToProfile() {
         duration: 1.2,
         ease: 'elastic.out(1, 0.3)',
       });
+    })
+    .then(() => {
+      // 홈 화면 지하철 애니메이션 리셋
+      gsap.killTweensOf('.subway__train');
+      gsap.set('.subway__train', {
+        x: '-500px',
+        clearProps: 'all', // 모든 인라인 스타일 제거
+      });
+      gsap.set('.subway__train__door__image--left', { x: '-40px' });
+      gsap.set('.subway__train__door__image--right', { x: '40px' });
     });
 
   currentSlide = 1;
+}
+
+function handleClickLeftSlideMove() {
+  console.log('왼쪽 버튼 클릭됨! 현재 슬라이드:', currentSlide);
+
+  if (currentSlide === 1) {
+    resetProfileElements();
+
+    // 프로필 -> 홈
+    gsap.to('.home', {
+      x: 0, // 홈을 원래 위치로
+      duration: 1,
+      ease: 'power2.inOut',
+    });
+    gsap.to('.profile', {
+      x: '0',
+      duration: 1,
+      ease: 'power2.inOut',
+    });
+
+    currentSlide = 0; // 홈으로 상태 변경
+  }
+}
+
+function handleClickRightSlideMove() {
+  console.log('오른쪽 버튼 클릭됨! 현재 슬라이드:', currentSlide);
+
+  if (currentSlide === 0) {
+    moveToProfile();
+  } else if (currentSlide === 1) {
+    // 프로필 → 프로젝트
+    gsap.to('.profile', {
+      x: '-200vw',
+      duration: 1,
+      ease: 'power2.inOut',
+    });
+    gsap.to('.project', {
+      x: '-100vw',
+      duration: 1,
+      ease: 'power2.inOut',
+    });
+    currentSlide = 2;
+  }
 }
 
 function initSlide() {
   // 모든 왼쪽 버튼(이전 슬라이드로 이동)에 이벤트 추가
   const leftButtons = document.querySelectorAll('.station--left');
   leftButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      console.log('왼쪽 버튼 클릭됨! 현재 슬라이드:', currentSlide);
-
-      if (currentSlide === 1) {
-        resetProfileElements();
-
-        // 프로필 -> 홈
-        gsap.to('.home', {
-          x: 0, // 홈을 원래 위치로
-          duration: 1,
-          ease: 'power2.inOut',
-        });
-        gsap.to('.profile', {
-          x: '0',
-          duration: 1,
-          ease: 'power2.inOut',
-        });
-
-        currentSlide = 0; // 홈으로 상태 변경
-      }
-    });
+    button.addEventListener('click', () => handleClickLeftSlideMove());
   });
 
   // 모든 오른쪽 버튼(다음 슬라이드로 이동)에 이벤트 추가
   const rightButtons = document.querySelectorAll('.station--right');
 
   rightButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      console.log('오른쪽 버튼 클릭됨! 현재 슬라이드:', currentSlide);
-
-      if (currentSlide === 0) {
-        moveToProfile();
-      } else if (currentSlide === 1) {
-        // 프로필 → 프로젝트
-        gsap.to('.profile', {
-          x: '-200vw',
-          duration: 1,
-          ease: 'power2.inOut',
-        });
-        gsap.to('.project', {
-          x: '-100vw',
-          duration: 1,
-          ease: 'power2.inOut',
-        });
-        currentSlide = 2;
-      }
-    });
+    button.addEventListener('click', () => handleClickRightSlideMove());
   });
 }
