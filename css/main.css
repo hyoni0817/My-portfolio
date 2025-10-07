@@ -16,11 +16,6 @@
   transform: translateX(0); /* GSAP 애니메이션을 위한 초기값 */
 }
 
-.profile {
-  left: 100vw; /* 초기에는 화면 오른쪽에 숨겨둠 */
-  transform: translateX(0); /* GSAP 애니메이션을 위한 초기값 */
-}
-
 .project {
   left: 100vw; /* 초기에는 화면 더 오른쪽에 숨겨둠 */
   transform: translateX(0); /* GSAP 애니메이션을 위한 초기값 */
@@ -307,4 +302,172 @@
 
 .subway__ticket__gate__door__image--left {
   width: 60px;
+}
+
+/* 프로필 섹션 */
+.profile {
+  left: 100vw; /* 초기에는 화면 오른쪽에 숨겨둠 */
+  transform: translateX(0); /* GSAP 애니메이션을 위한 초기값 */
+  z-index: 1;
+  background: var(--color-background);
+}
+
+.profile__content {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.profile__content--left {
+  padding: 0 40px;
+  flex: 0 0 20%;
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile__content--right {
+  padding: 0 50px;
+  flex: 0 0 50%;
+}
+
+/* 프로필 섹션 이미지 모음 */
+.profile__image__group {
+  visibility: hidden;
+  position: relative;
+}
+
+.profile__party__image {
+  position: absolute;
+  top: -20px;
+  right: 40px;
+  transform-origin: center center;
+  will-change: transform, opacity;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+.profile__sparkle__image {
+  position: absolute;
+  top: -10px;
+  left: -20px;
+}
+
+.profile__fill-sparkle__image {
+  /* display: none; */
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+}
+
+.profile__spiral__image--left {
+  display: none;
+  position: absolute;
+  top: 130px;
+  left: -40px;
+}
+
+.profile__spiral__image--right {
+  display: none;
+  position: absolute;
+  bottom: 30px;
+  right: 0px;
+}
+
+/* 프로필 섹션 이미지 모음 */
+.profile__image__group {
+  visibility: hidden;
+  position: relative;
+}
+
+.profile__party__image {
+  position: absolute;
+  top: -20px;
+  right: 40px;
+  transform-origin: center center;
+  will-change: transform, opacity;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+.profile__sparkle__image {
+  position: absolute;
+  top: -10px;
+  left: -20px;
+}
+
+.profile__fill-sparkle__image {
+  /* display: none; */
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+}
+
+.profile__spiral__image--left {
+  display: none;
+  position: absolute;
+  top: 130px;
+  left: -40px;
+}
+
+.profile__spiral__image--right {
+  display: none;
+  position: absolute;
+  bottom: 30px;
+  right: 0px;
+}
+
+/* 프로필 링크 리스트 */
+.profile__link__list {
+  padding: 0;
+  display: flex;
+  gap: 1.6rem;
+}
+
+.profile__link__item {
+  a {
+    font-family: 'SeoulNamsanL';
+    font-size: 2rem;
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 25px;
+    border: 1px solid var(--color-white);
+    transition: all 0.3s ease;
+  }
+
+  a:hover {
+    background-color: var(--color-white);
+    color: var(--color-black);
+  }
+}
+
+/* 프로필 소개 */
+
+.profile__intro__title {
+  font-size: 2.4rem;
+  line-height: 5.2rem;
+  color: var(--color-white);
+}
+
+.profile__intro__text {
+  font-family: 'Noto Sans KR';
+  font-size: 1.8rem;
+  line-height: 3.6rem;
+  color: var(--color-white);
+  word-break: keep-all;
+}
+
+/* 태블릿 사이즈부터 세로 정렬 */
+@media (max-width: 1024px) {
+  .profile__content--left {
+    flex: 0 0 100%; /* 전체 너비 차지 */
+  }
+
+  .profile__content--right {
+    flex: 0 0 100%; /* 전체 너비 차지 */
+  }
 }
