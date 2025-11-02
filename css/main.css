@@ -538,9 +538,21 @@ width: 100%;
   display: table;
   width: 100%;
 }
+
 .project-img6 {
 
   background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/project6.png');
+  height: 100%; 
+  /* Center and scale the image nicely */
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: table;
+  width: 100%;
+}
+
+.project-img7 {
+
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/project7.png');
   height: 100%; 
   /* Center and scale the image nicely */
   background-repeat: no-repeat;
