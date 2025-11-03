@@ -561,6 +561,17 @@ width: 100%;
   width: 100%;
 }
 
+.project-img8 {
+
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/project8.png');
+  height: 100%; 
+  /* Center and scale the image nicely */
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: table;
+  width: 100%;
+}
+
 .project-subtitle {
 font-family: 'Do Hyeon', sans-serif;
 font-size : 20px;
